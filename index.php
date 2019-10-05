@@ -137,34 +137,51 @@ form.addEventListener('submit', evt => {
         responsiveVoice.speak(speak);
     }
 </script>
+
+
 <body>
-    <h1><i>NoteSync</i></h1>
-    <div class="nav">
-        <a class="Home" href="#home">Home</a>
-        <a class="Docs" href="#docs">YourDocs</a>
-        <a class="about">About</a>
-        <a class="Scan" href="#scan">Sign up</a>
+<h1><i>SyncNotes</i></h1>
+<div class="nav">
+   <a class="Home" href="#home">Home</a>
+  <a class="Docs" href="#docs">YourDocs</a>
+<a class="about">About</a>
+ <a style="float:right" class="signup" href="signupU.html">Sign up</a>
+<a class="login" href="#login" style="float:right">Login</a>
+   
+   
+ 
+</div>
+    
+   <center>
+
+       <form action="upload.php" method="post" enctype="multipart/form-data">
+           <h3>Image to Text</h3>
+           <div class="add">
+              
+Add the image here:<br>
+       <br><input type="file" name="file" id="file">
+       <br><br>
+                   
+       <input type="submit" value="Upload" name="submit">  
+<br><br>
+<input type="button" value="Download text file" name="download">
+<br><br>
+ <input type="button" value="Covert to pdf" name="convert">
+   </div>
+           <h3>Text to Speech</h3>     
+             
+<div class="speech">
 
 
-    </div>
-    <div class="add">
-        <form action="" method="post" enctype="multipart/form-data">
-            <center>
-                Add the image here:<br>
-                <br><input type="file" name="ocrfile" id="ocrfile">
-                <br><br>
-
-                <input type="submit" value="Upload" name="submit" formaction="cloud.php">
-                </form>
-                <br><br>
-                <input type="download" value="Download text file" name="download">
-                <br><br>
-                <input type="convert" value="Convert to pdf" name="convert">
-                <br><br>
-                <form><input type="text" value="Message" name="message" id="ttsmessage"><br><br>
-                <input type="button" value="Audio" onclick="mySpeech()"></form>
-            </center>
-
-    </div>
+    <br><input type="file" name="file" id="file">
+    <br><br>
+    <input type="submit" value="Upload" name="submit">  
+<br><br>
+ 
+     <audio controls>
+         <source src type="audio/mpeg">
+        </audio>
+   </div>
+       </form></center>
 </body>
 </html>
