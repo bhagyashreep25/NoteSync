@@ -174,7 +174,7 @@ text-align: center;
                 <button class="waves-effect waves-light btn tab right-curve" id='reg_tab' onclick="switch_tab('reg')">Sign Up</a>
             </div>
             <div id="login-div" style="display: flex">
-              <form class="card login-card" method='POST' action="">
+              <form class="card login-card" method='POST' action="./login_check.php">
                 <div class='row'>
                   <div class='input-field col s12'>
                     <i class="material-icons prefix" style="color: #23416B">email</i>
@@ -194,7 +194,7 @@ text-align: center;
               </form>
             </div>
             <div id="register-div" style="display: None">
-              <form class="card register-card" method='POST' action="">
+              <form class="card register-card" method='POST' action="./login_check.php">
                 <div class='row'>
                   <div class='input-field col s12'>
                     <i class="material-icons prefix" style="color: #23416B">person</i>

@@ -1,4 +1,8 @@
 <?php
+session_start();
+if(!isset($_SESSION['userid'])){
+    header("Location:./signup.php");
+}
 require_once(__DIR__ . '/vendor/autoload.php');
 require_once('./config.php');
 
@@ -70,7 +74,7 @@ if (isset($_FILES['ocrfile'])) {
 
         echo "<br>";
     }
-    $result_file = fopen("./results/result.txt", "w");
+    $result_file = fopen("./results/$file_name.txt", "w");
     fwrite($result_file, implode($final_result));
     fclose($result_file);
     // $phpWord = new \PhpOffice\PhpWord\PhpWord();
