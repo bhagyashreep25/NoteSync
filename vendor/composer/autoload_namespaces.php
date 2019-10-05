@@ -6,6 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Rize\\UriTemplate' => array($vendorDir . '/rize/uri-template/src'),
     'Monolog' => array($vendorDir . '/monolog/monolog/src'),
 );

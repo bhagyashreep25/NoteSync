@@ -14,10 +14,13 @@ class ComposerStaticInit608780f45e675de71f2afa67221ae7ab
     );
 
     public static $prefixLengthsPsr4 = array (
+        'S' => 
+        array (
+            'Swagger\\Client\\' => 15,
+        ),
         'P' => 
         array (
             'Psr\\Http\\Message\\' => 17,
-            'Psr\\Cache\\' => 10,
         ),
         'G' => 
         array (
@@ -43,13 +46,13 @@ class ComposerStaticInit608780f45e675de71f2afa67221ae7ab
     );
 
     public static $prefixDirsPsr4 = array (
+        'Swagger\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/cloudmersive/cloudmersive_ocr_api_client/lib',
+        ),
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
-        ),
-        'Psr\\Cache\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/cache/src',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (
@@ -63,69 +66,9 @@ class ComposerStaticInit608780f45e675de71f2afa67221ae7ab
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
-        'Grpc\\Gcp\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/google/grpc-gcp/src',
-        ),
-        'Grpc\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/grpc/grpc/src/lib',
-        ),
-        'Google\\Protobuf\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/google/protobuf/src/Google/Protobuf',
-        ),
-        'Google\\Cloud\\Vision\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/google/cloud-vision/src',
-        ),
-        'Google\\Cloud\\Core\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/google/cloud-core/src',
-        ),
-        'Google\\Auth\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/google/auth/src',
-        ),
-        'Google\\ApiCore\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/google/gax/src',
-        ),
-        'Google\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/google/common-protos/src',
-        ),
-        'GPBMetadata\\Google\\Protobuf\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/google/protobuf/src/GPBMetadata/Google/Protobuf',
-        ),
-        'GPBMetadata\\Google\\Cloud\\Vision\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/google/cloud-vision/metadata',
-        ),
-        'GPBMetadata\\Google\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/google/common-protos/metadata',
-            1 => __DIR__ . '/..' . '/google/gax/metadata',
-        ),
-        'Firebase\\JWT\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
-        ),
-    );
-
-    public static $fallbackDirsPsr4 = array (
-        0 => __DIR__ . '/..' . '/google/grpc-gcp/src/generated',
     );
 
     public static $prefixesPsr0 = array (
-        'R' => 
-        array (
-            'Rize\\UriTemplate' => 
-            array (
-                0 => __DIR__ . '/..' . '/rize/uri-template/src',
-            ),
-        ),
         'M' => 
         array (
             'Monolog' => 

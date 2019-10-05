@@ -1,35 +1,42 @@
 [
     {
-        "name": "firebase/php-jwt",
-        "version": "v5.0.0",
-        "version_normalized": "5.0.0.0",
+        "name": "cloudmersive/cloudmersive_ocr_api_client",
+        "version": "1.5.9",
+        "version_normalized": "1.5.9.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/firebase/php-jwt.git",
-            "reference": "9984a4d3a32ae7673d6971ea00bae9d0a1abba0e"
+            "url": "https://github.com/Cloudmersive/Cloudmersive.APIClient.PHP.OCR.git",
+            "reference": "5d04eae70620341b04ec5a6699c1e1b146a31df9"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/firebase/php-jwt/zipball/9984a4d3a32ae7673d6971ea00bae9d0a1abba0e",
-            "reference": "9984a4d3a32ae7673d6971ea00bae9d0a1abba0e",
+            "url": "https://api.github.com/repos/Cloudmersive/Cloudmersive.APIClient.PHP.OCR/zipball/5d04eae70620341b04ec5a6699c1e1b146a31df9",
+            "reference": "5d04eae70620341b04ec5a6699c1e1b146a31df9",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.3.0"
+            "ext-curl": "*",
+            "ext-json": "*",
+            "ext-mbstring": "*",
+            "guzzlehttp/guzzle": "^6.2",
+            "php": ">=5.5"
         },
         "require-dev": {
-            "phpunit/phpunit": " 4.8.35"
+            "friendsofphp/php-cs-fixer": "~1.12",
+            "phpunit/phpunit": "^4.8",
+            "squizlabs/php_codesniffer": "~2.6"
         },
-        "time": "2017-06-27T22:17:23+00:00",
+        "time": "2019-08-19T06:05:40+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "Firebase\\JWT\\": "src"
+                "Swagger\\Client\\": "lib/"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
+<<<<<<< HEAD
             "BSD-3-Clause"
         ],
         "authors": [
@@ -435,6 +442,22 @@
         "homepage": "https://grpc.io",
         "keywords": [
             "rpc"
+=======
+            "proprietary"
+        ],
+        "authors": [
+            {
+                "name": "Cloudmersive",
+                "homepage": "https://cloudmersive.com"
+            }
+        ],
+        "homepage": "https://cloudmersive.com",
+        "keywords": [
+            "api",
+            "php",
+            "sdk",
+            "swagger"
+>>>>>>> c0341119de679bcc598312c63d55c81d3ab42f01
         ]
     },
     {
@@ -676,54 +699,6 @@
         ]
     },
     {
-        "name": "psr/cache",
-        "version": "1.0.1",
-        "version_normalized": "1.0.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/php-fig/cache.git",
-            "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/php-fig/cache/zipball/d11b50ad223250cf17b86e38383413f5a6764bf8",
-            "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.0"
-        },
-        "time": "2016-08-06T20:24:11+00:00",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.0.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Psr\\Cache\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "PHP-FIG",
-                "homepage": "http://www.php-fig.org/"
-            }
-        ],
-        "description": "Common interface for caching libraries",
-        "keywords": [
-            "cache",
-            "psr",
-            "psr-6"
-        ]
-    },
-    {
         "name": "psr/http-message",
         "version": "1.0.1",
         "version_normalized": "1.0.1.0",
@@ -816,51 +791,5 @@
             }
         ],
         "description": "A polyfill for getallheaders."
-    },
-    {
-        "name": "rize/uri-template",
-        "version": "0.3.2",
-        "version_normalized": "0.3.2.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/rize/UriTemplate.git",
-            "reference": "9e5fdd5c47147aa5adf7f760002ee591ed37b9ca"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/rize/UriTemplate/zipball/9e5fdd5c47147aa5adf7f760002ee591ed37b9ca",
-            "reference": "9e5fdd5c47147aa5adf7f760002ee591ed37b9ca",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.0"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "~4.0.0"
-        },
-        "time": "2017-06-14T03:57:53+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Rize\\UriTemplate": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Marut K",
-                "homepage": "http://twitter.com/rezigned"
-            }
-        ],
-        "description": "PHP URI Template (RFC 6570) supports both expansion & extraction",
-        "keywords": [
-            "RFC 6570",
-            "template",
-            "uri"
-        ]
     }
 ]
