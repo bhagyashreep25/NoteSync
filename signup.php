@@ -16,7 +16,7 @@ if (isset($_SESSION['userid'])) {
   <link href="https://fonts.googleapis.com/css?family=Lora:400i&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
   <link rel="stylesheet" type="text/css" href="./styles/login.css">
-  <title>SocGroups - Sign in</title>
+  <title>NoteSync - Sign in</title>
 </head>
 <!-- <style>
 body {font-family: Arial, Helvetica, sans-serif;
@@ -196,21 +196,21 @@ text-align: center;
             <div id="register-div" style="display: None">
               <form class="card register-card" method='POST' action="./login_check.php">
                 <div class='row'>
-                  <div class='input-field col s12'>
+                  <!-- <div class='input-field col s12'>
                     <i class="material-icons prefix" style="color: #23416B">person</i>
                     <input class='validate' type='text' name='name' id='name' />
                     <label for='name'>Name</label>
-                  </div>
+                  </div> -->
                   <div class='input-field col s12'>
                     <i class="material-icons prefix" style="color: #23416B">email</i>
                     <input class='validate' type='email' name='reg_email' id='reg_email' />
                     <label for='email'>Email</label>
                   </div>
-                  <div class='input-field col s12'>
+                  <!-- <div class='input-field col s12'>
                     <i class="material-icons prefix" style="color: #23416B">phone</i>
                     <input class='validate' type='tel' name='phone' id='phone' />
                     <label for='phone'>Phone No.</label>
-                  </div>
+                  </div> -->
                   <div class='input-field col s12'>
                     <i class="material-icons prefix" style="color: #23416B">vpn_key</i>
                     <input class='validate' type='password' name='reg_password' id='reg_password' />
@@ -228,7 +228,9 @@ text-align: center;
               <!-- <?php
                     echo $cardmsg;
                     ?> -->
-              <b style="font-size:50px;">Welcome back!</b>
+              <b style="font-size:50px;">NoteSync</b>
+              <br>
+              <i style="font-size:20px; ">Convert your notes from analog to digital </i>
               <br>
               <i style="font-size:20px; ">Sign in or register to get started with NoteSync</i>
             </div>

@@ -46,7 +46,7 @@ if (isset($_POST['log_email'])) {
         // echo "$email $pwd";
         $options = array("cost" => 4);
         $hashPassword = password_hash($pwd, PASSWORD_BCRYPT, $options);
-        $query = "INSERT INTO $dbname.user(email,password) VALUES ($email', '$hashPassword');";
+        $query = "INSERT INTO $dbname.user(email,password) VALUES ('$email','$hashPassword');";
         $result = mysqli_query($conn, $query);
         // $db_pwd = pg_fetch_result($result,0,1);
         if ($result) {

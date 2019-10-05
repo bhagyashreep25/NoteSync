@@ -1,5 +1,5 @@
 <html>
-
+<?php session_start();?>
 <head>
 
     <!-- Compiled and minified CSS -->
@@ -44,7 +44,7 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="./index.php">Home</a></li>
         <li><a href="./userdocs.php">Your Docs</a></li>
-        <li><a style="float:right" href="#">Login</a></li>
+        <li><a style="float:right" href=<?php if(isset($_SESSION['userid'])) echo "./logout.php"; else echo "./signup.php";?>><?php if(isset($_SESSION['userid'])) echo "Logout"; else echo "Login";?></a></li>
       </ul>
     </div>
 </nav>
