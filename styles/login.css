@@ -1,0 +1,94 @@
+body {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    overflow: hidden;
+    position: relative;
+}
+
+.login-card {
+    background-color: #ffffff;
+    display: flex;
+    margin: auto;
+    padding: 10px 48px 0px 48px;
+    box-shadow: 0 0 5px 5px rgba(84, 2, 161, 0.178);
+    border-radius: 1vw;
+}
+
+.register-card {
+    background-color: #ffffff;
+    display: flex;
+    margin: auto;
+    padding: 10px 48px 0px 48px;
+    box-shadow: 0 0 5px 5px rgba(84, 2, 161, 0.178);
+    border-radius: 1vw;
+}
+
+.main-card {
+    display: inline-block;
+    /* display:flex; */
+    margin: auto;
+    padding: 32px 48px 0px 48px;
+    /* background-image: linear-gradient(to bottom right, #140078,#8559da  );*/
+    background-image: linear-gradient(to bottom right,#23416B,#B04276) ;
+    border-radius: 1vw;
+    /* height: 100%; */
+    height: 50vh;
+}
+
+
+.tab{
+    border: 1px solid white; 
+    background-color: transparent;
+    color: white;
+}
+
+.tab:hover{
+    background-color: #B04276 !important;
+    color: white !important;
+}
+
+#login_tab{
+    background-color: #E2EAEF;
+    color: #23416B;
+}
+
+/* .tab:hover{
+    background-color: #B04276;
+} */
+
+.left-curve{
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.right-curve{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+input:focus + label{
+    color: #23416B !important;
+}
+
+.row input:focus{
+    border-bottom: 1px solid #23416B !important;
+    box-shadow: 0 1px 0 0 #23416B !important
+}
+
+.submit{
+    border: 1px solid #23416B; 
+    background-color: #23416B;
+    border-radius: 50px;
+}
+
+.submit:hover{
+    background-color: #B04276;
+    border: 1px solid #B04276;
+}

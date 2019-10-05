@@ -1,4 +1,8 @@
 <?php
+session_start();
+if(!isset($_SESSION['userid'])){
+    header("Location:./signup.php");
+}
 require_once(__DIR__ . '/vendor/autoload.php');
 require_once('./config.php');
 
