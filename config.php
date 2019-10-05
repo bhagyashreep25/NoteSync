@@ -20,6 +20,9 @@
         echo $e . ":(";
         exit;
     }
+
+    $uploadpath = "./uploads/";
+    $resultpath = "./results/";
     // print_r($conn);
 ?>
 

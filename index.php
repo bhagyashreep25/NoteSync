@@ -1,4 +1,5 @@
 <html>
+
 <head>
 
     <!-- Compiled and minified CSS -->
@@ -28,7 +29,7 @@
 </head>
 
 <script>
-    function mySpeech(){
+    function mySpeech() {
         var speak = document.getElementById("ttsmessage").value;
         responsiveVoice.speak(speak);
     }
@@ -91,4 +92,5 @@
     <!-- <form><input type="text" value="Message" name="message" id="ttsmessage"><br><br>
     <input type="button" value="Audio" onclick="mySpeech()"></form> -->
 </body>
+
 </html>
