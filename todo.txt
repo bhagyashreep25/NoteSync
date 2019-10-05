@@ -1,0 +1,13 @@
+Functionalities:
+OCR (Vision)
+TTS
+Natural lang stuff (Synonyms and Wiki)
+
+
+Todo:
+API Integration
+Database creation
+
+
+Issues:
+Image detection
