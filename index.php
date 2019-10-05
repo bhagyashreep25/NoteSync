@@ -128,7 +128,14 @@ form.addEventListener('submit', evt => {
 	textarea.blur(); 
 }); 
 </script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=KrEQqVp2"></script>
+<script>
+    function mySpeech(){
+        var speak = document.getElementById("ttsmessage").value;
+        responsiveVoice.speak(speak);
+    }
+</script>
 <body>
     <h1><i>NoteSync</i></h1>
     <div class="nav">
@@ -147,16 +154,15 @@ form.addEventListener('submit', evt => {
                 <br><br>
 
                 <input type="submit" value="Upload" name="submit" formaction="cloud.php">
+                </form>
                 <br><br>
                 <input type="download" value="Download text file" name="download">
                 <br><br>
-                <input type="covert" value="Covert to pdf" name="convert">
+                <input type="convert" value="Convert to pdf" name="convert">
                 <br><br>
-                <input type="text" value="Message" name="message" id="message">
-                <br><br> <input type="button" value="Audio">
+                <form><input type="text" value="Message" name="message" id="ttsmessage"><br><br>
+                <input type="button" value="Audio" onclick="mySpeech()"></form>
             </center>
-
-        </form>
 
     </div>
 </body>
