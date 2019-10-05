@@ -1,0 +1,26 @@
+ADBMS : Module 4
+4/10/ 19/ 2 - Phase Protocol :
+Phase 1 Obtaining a decision
+ Co ordinator asks all participants to prepare to commit
+Ti
+ Adds records < prepare T> to log & forces log to
+stable storage
+ Sends prep T mags to all sites at which I executed
+ Transaction manager ( at site ) determines if it can commit
+ if not ,add <no T> record - log , " abort ?" to Ci
+ if can be committed :
+- add record <ready T> to log
+force all records for T to stable storage
+send ready T' mig to Ci
+Phase 2 : Recording the decision
+ I can be committed if C receives ' ready T' msg from all
+ C adds < commit T > or <abort T> accordingly
+ C sends mag to each participant & take local action
+Failure handling : from log
+a ) commit T - no action
+b) abort T - no action
+( ) ready T - consult Ci , redo if commit , undo if abort
+d ) if no record for T ie Si failed before " prepare T" response
+L coordinator aborts T , SK does "undo ? "
+Co-ordinator failure :
+Blocking problem : holds resources
