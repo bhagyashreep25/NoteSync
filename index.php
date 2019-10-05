@@ -143,13 +143,13 @@ form.addEventListener('submit', evt => {
  
 </div>
    <div class="add">
-       <form action="upload.php" method="post" enctype="multipart/form-data">
+       <form action="" method="post" enctype="multipart/form-data">
           <center>
 Add the image here:<br>
-       <br><input type="file" name="file" id="file">
+       <br><input type="file" name="ocrfile" id="ocrfile">
        <br><br>
                    
-       <input type="submit" value="Upload" name="submit">  
+       <input type="submit" value="Upload" name="submit" formaction="./cloud.php">  
 <br><br>
 <input type="button" value="Download text file" name="download">
 <br><br>

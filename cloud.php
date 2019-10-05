@@ -80,3 +80,4 @@ if (isset($_FILES['ocrfile'])) {
     // $objWriter->save('resultword.docx');
 
 }
+?>
