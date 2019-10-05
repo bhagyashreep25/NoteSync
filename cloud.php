@@ -5,12 +5,12 @@ require_once('./config.php');
 // Configure API key authorization: Apikey
 $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey("Apikey", '41c65395-0741-456f-9c94-384b6bb897d6');
 
-if (isset($_FILES['ocrfile'])) {
-    $file_name = $_FILES['ocrfile']['name'];
-    $file_size = $_FILES['ocrfile']['size'];
-    $file_tmp = $_FILES['ocrfile']['tmp_name'];
-    $file_type = $_FILES['ocrfile']['type'];
-    $string = explode('.', $_FILES['ocrfile']['name']);
+if (isset($_FILES['image'])) {
+    $file_name = $_FILES['image']['name'];
+    $file_size = $_FILES['image']['size'];
+    $file_tmp = $_FILES['image']['tmp_name'];
+    $file_type = $_FILES['image']['type'];
+    $string = explode('.', $_FILES['image']['name']);
     $file_ext = strtolower(end($string));
     $errors = array();
     $extensions = array("jpg", "png", "jpeg");
@@ -65,12 +65,12 @@ if (isset($_FILES['ocrfile'])) {
         echo 'Exception when calling ImageOcrApi->imageOcrPost: ', $e->getMessage(), PHP_EOL;
     }
 
-    for ($count = 0; $count < sizeof($final_result); $count++) {
-        print_r($final_result[$count]);
+    // for ($count = 0; $count < sizeof($final_result); $count++) {
+    //     print_r($final_result[$count]);
 
-        echo "<br>";
-    }
-    $result_file = fopen("./results/result.txt", "w");
+    //     echo "<br>";
+    // }
+    $result_file = fopen("./results/" . $file_name . ".txt", "w");
     fwrite($result_file, implode($final_result));
     fclose($result_file);
     // $phpWord = new \PhpOffice\PhpWord\PhpWord();
