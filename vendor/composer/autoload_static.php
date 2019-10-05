@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit21fb98e5d22fd0322a36bf84f9808634
+class ComposerStaticInite8dd11e08b104d61d02c1e9fcba45965
 {
     public static $files = array (
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
