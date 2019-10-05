@@ -20,6 +20,6 @@
         echo $e . ":(";
         exit;
     }
-    print_r($conn);
+    // print_r($conn);
 ?>
 
