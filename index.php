@@ -1,55 +1,56 @@
 <html>
-
 <head>
-    <style>
-        body {
-            margin: 0;
-            font-family: Georgia, Helvetica, sans-serif;
-
+   <style>
+       
+       body{
+           margin: 0;
+           font-family: Georgia, Helvetica,sans-serif;
+       
+       }
+       
+    .nav{
+       overflow: hidden;
+       background-image: linear-gradient(to bottom right,#23416b,#b04276);
         }
-
-        .nav {
-            overflow: hidden;
-            background-image: linear-gradient(to bottom right, #23416b, #b04276);
+       .nav a{
+           
+          float: left;
+           color: white;
+           text-align: center;
+           padding: 14px 16px;
+           text-decoration: none;
+           font-size: 20px;
+           opacity:0.8;}
+       .nav a:hover{
+           opacity: 1;
+             }
+       .add{
+           margin: 5%;
+margin-left:28%;
+           padding: 30px;
+           border: #b04276 solid 2px;
+ width:40%;
+           box-shadow: 3px 3px #b04276;
         }
-
-        .nav a {
-
-            float: left;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 20px;
-            opacity: 0.8;
-        }
-
-        .nav a:hover {
-            opacity: 1;
-        }
-
-        .add {
-            margin: 5%;
-            margin-left: 28%;
-            padding: 30px;
-            border: #b04276 solid 2px;
-            width: 40%;
-        }
-
-        .add input {
-            border-radius: 7px;
-            width: 250px;
-            text-align: center;
-            background-color: bisque;
-        }
-
-        h1 {
-            color: black;
-            text-align: center;
-            font-size: 50px;
-        }
-    </style>
+       .add input{
+           border-radius:7px;
+           width:250px;
+           text-align:center;
+           background-color: bisque;
+                 }
+h1{
+color: black ;
+text-align:center;
+font-size:50px;
+}
+       .login{
+           float:right;
+           padding-right: 20px;
+        margin-right: 2px;
+       }
+ </style>
 </head>
+
 
 <script>
 // Initialising the speech API 
@@ -166,5 +167,4 @@ form.addEventListener('submit', evt => {
 
     </div>
 </body>
-
 </html>
