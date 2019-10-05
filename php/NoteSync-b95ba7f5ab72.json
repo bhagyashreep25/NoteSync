@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "woven-ridge-255006",
+  "private_key_id": "b95ba7f5ab7238952a1765199165adc537604cb1",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCWPIC7ykMfI7NL\ntTmfrRrukoPjsvjcQLO1Fb+x47Puk+jrjvUqDl0Z0uVnnH27Z92r9kS5UJfY5GNW\nMEqcaba3s99wFcgbTXFXEIp4hyoMBoPcpSIW3qTEkhCohppFSVw5cw35UJTdWFmS\nxf8mcIAMjjRCPiJqNDL8ik/oal8x3ZZ5J6PBryuNhNIZrnHFOgYY19/YX9Ma0FVA\niWCi22dCNkSiOwFWfX5PzeJv3m7dfhono3XjXyESvmtUXe+jeQ3Xu/sMEIo4GdKa\nKBsQAtwLJr+ajt9cBxBN8gibcONlFBA4gdiLwp7FydNs3Mke4STkJhFx4YsaQWoy\nCJDnWWrpAgMBAAECggEABL/08fr7FEj0qjgYkkvOxiwrr09BPvVsuRTu8pjYX3qd\nqpTie2no16ArUJNKBlrKT12B3roFkv3lhhwQv9E3zacKMWj+4p4YL0B+oEDlu2uZ\nT6iI42A2pWBY1nsq9XXUTJyunGtHyZe5fUJ1RqnX4o28aTu9qs3rrsBQtnBmghUK\n9vur2JRkmXH1g224koHY9aO8zTHoFSlmZM4YkkKakhLpc4qqqGlW0sT/3R7Hz3ZR\nD9HX8bJWBzfCRJeUhJndwWZEI2Nhk3ykh1ilGeTrerEgOGZa//oca8Q4ISiE3ae5\nCBEs4sXwRCmBwssMWtc3nRYZ78kxP/Bw0W27tOIVgQKBgQDR2iMfS/ewltzxXS90\nqi2tuY0I2Kleid8V5Xq+pUWm/ks86W0DkSzouTDFtNdsSARxv80wlAzyKbNajDW3\nF3mmmmxHLB+OMLrmFd4xEnOSQJK4N2q4wxWZkxVzYB7FDU22IGeKgevfHpilJ/h1\nFt+9wedY2xbgcrsIbyrtEWXxLQKBgQC3RjqH42bHVrXYKc+LaNWNz2Q8sMyJcCQ0\ntHLJe7XFnizRjM42t/i1ss41LdnsEUI94we4hGnwcrTjw/mgzW7NoaILo7UQ7OdS\n0bwFWjihzvOLpYqGrg6SqvfG+gFP/UMOAxLGIzBRreRXQFgUC4SPIIztPHWI6I01\nDS0ROg3eLQKBgQCHKu92iDMZfoL/wJsBlV/ox1yNdyjY6QtVikNeqwvLPX5u1JfQ\nNWFs4WQF5K7hYx3hur5K7QHNtYh96VPsA+XqpwrZaRVGPCMWcr10dEMW0BrxJ1jJ\ne3bdPb0SXLZVDHWiuwqWT4sDYyzFLJK/sKUbD9uZAz2gAqZwD1Lh8lPsXQKBgBXI\nLfqqhzOX1aLsTTNncUIabPJdnOGUx2jQLXhO0Kq9Atyg3H1aXh/SMXnWijjpUDMk\nwW0np6OhLmiHiSqYX9vmoui5OzLYxSFttef48hQhEYb+VLlvBGJgGXS3j+Je2lJX\nASs1UW/Tt/i6t/0h5U5Rcw5bCikMYoP0ne+XM8C9AoGABTz5fwUVV+RBDB9PKObd\n/vT2ehyYZVsu985Co8HuCiUUN0v/4BjAD+E5Sx57BHY0Kf1/6fs3nC6+qZZ7Qu4g\n9SZ6ekriXYDEVVuCQ6Q3St/UzvgT6PY1tg72DUttkEWTJqlrbQzgeBXeXI7lwdia\njJOICOlxHa9Nibeh0HqdXo4=\n-----END PRIVATE KEY-----\n",
+  "client_email": "notesync@woven-ridge-255006.iam.gserviceaccount.com",
+  "client_id": "109438890463885832090",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/notesync%40woven-ridge-255006.iam.gserviceaccount.com"
+}
