@@ -1,136 +1,32 @@
 <html>
 <head>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap" rel="stylesheet">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=KrEQqVp2"></script>
+
    <style>
-       
-       body{
-           margin: 0;
-           font-family: Georgia, Helvetica,sans-serif;
-       
-       }
-       
-    .nav{
-       overflow: hidden;
-       background-image: linear-gradient(to bottom right,#23416b,#b04276);
-        }
-       .nav a{
-           
-          float: left;
-           color: white;
-           text-align: center;
-           padding: 14px 16px;
-           text-decoration: none;
-           font-size: 20px;
-           opacity:0.8;}
-       .nav a:hover{
-           opacity: 1;
-             }
-       .add{
-           margin: 5%;
-margin-left:28%;
-           padding: 30px;
-           border: #b04276 solid 2px;
- width:40%;
-           box-shadow: 3px 3px #b04276;
-        }
-       .add input{
-           border-radius:7px;
-           width:250px;
-           text-align:center;
-           background-color: bisque;
-                 }
-h1{
-color: black ;
-text-align:center;
-font-size:50px;
-}
-       .login{
-           float:right;
-           padding-right: 20px;
-        margin-right: 2px;
-       }
+    body{
+        font-family: 'Be Vietnam';
+    }
+    .nav-wrapper{
+        background-image: linear-gradient(to bottom right,#23416b,#b04276);
+        padding: 0px, 10px;
+    }
+    .card{
+        margin: 20px;
+    }
+    .btn{
+        background-image: linear-gradient(to bottom right,#23416b,#b04276);
+    }
  </style>
 </head>
 
-
-<script>
-// Initialising the speech API 
-const synth = window.speechSynthesis; 
-// Element initialization section 
-const form = document.querySelector('form'); 
-const textarea = document.getElementById('maintext'); 
-const voice_select = document.getElementById('voice-select'); 
- 
-// Retrieving the different voices and putting them as 
-// options in our speech selection section 
-let voices = []; 
-const getVoice = () => { 
-	
-	// This method retrieves voices and is asynchronously loaded 
-	voices = synth.getVoices(); 
-	var option_string = ""; 
-	voices.forEach(value => { 
-		var option = value.name + ' (' + value.lang + ') '; 
-		var newOption = "<option data-name='" + value.name + 
-				"' data-lang='" + value.lang + "'>" + option 
-				+ "</option>\n"; 
-		option_string += newOption; 
-	}); 
-	
-	voice_select.innerHTML = option_string; 
-} 
-synth.onvoiceschanged = function() { 
-	getVoice(); 
-}; 
-const speak = () => { 
-	
-	// If the speech mode is on we dont want to load 
-	// another speech 
-	if(synth.speaking) { 
-		alert('Already speaking....'); 
-		return; 
-	} 
-	
-	
-	if(textarea.value !== '') { 
-		
-		// Creating an object of SpeechSynthesisUtterance with 
-		// the input value that represents a speech request 
-		const speakText = new SpeechSynthesisUtterance(textarea.value); 
-		// When the speaking is ended this method is fired 
-		speakText.onend = e => { 
-			console.log('Speaking is done!'); 
-		}; 
-		
-		// When any error occurs this method is fired 
-		speakText.error = e=> { 
-			console.error('Error occured...'); 
-		}; 
-		// Selecting the voice for the speech from the selection DOM 
-		const id = voice_select.selectedIndex; 
-		const selectedVoice = 
-			voice_select.selectedOptions[0].getAttribute('data-name'); 
-	
-		// Checking which voices has been chosen from the selection 
-		// and setting the voice to the chosen voice 
-		voices.forEach(voice => { 
-			if(voice.name === selectedVoice) { 
-				speakText.voice = voice; 
-			} 
-		}); 
-		// Finally calling the speech function that enables speech 
-		synth.speak(speakText); 
-	} 
-}; 
-// This is the section when we assign the speak button, the 
-// speech function 
-form.addEventListener('submit', evt => { 
-	evt.preventDefault(); 
-	speak(); 
-	textarea.blur(); 
-}); 
-</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://code.responsivevoice.org/responsivevoice.js?key=KrEQqVp2"></script>
 <script>
     function mySpeech(){
         var speak = document.getElementById("ttsmessage").value;
@@ -140,48 +36,59 @@ form.addEventListener('submit', evt => {
 
 
 <body>
-<h1><i>SyncNotes</i></h1>
-<div class="nav">
-   <a class="Home" href="#home">Home</a>
-  <a class="Docs" href="#docs">YourDocs</a>
-<a class="about">About</a>
- <a style="float:right" class="signup" href="signupU.html">Sign up</a>
-<a class="login" href="#login" style="float:right">Login</a>
+
+<nav>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo">NoteSync</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="./index.php">Home</a></li>
+        <li><a href="./userdocs.php">Your Docs</a></li>
+        <li><a style="float:right" href="#">Login</a></li>
+      </ul>
+    </div>
+</nav>
+
+<div class="row">
+    <div class="col s12 m6 l4">
+      <div class="card hoverable">
+        <div class="card-content white-text">
+          <span class="card-title black-text">OCR</span>
+          <p class="black-text">I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+        <div class="card-action">
+          <a class="btn" href="ocr.php">Try it out!</a>
+        </div>
+      </div>
+    </div>
    
-   
- 
-</div>
-    
-   <center>
+    <div class="col s12 m6 l4">
+      <div class="card hoverable">
+        <div class="card-content white-text">
+          <span class="card-title black-text">Notes Aloud</span>
+          <p class="black-text">I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+        <div class="card-action">
+            <a class="btn" href="#">Try it out!</a>
+        </div>
+      </div>
+    </div>
 
-       <form action="upload.php" method="post" enctype="multipart/form-data">
-           <h3>Image to Text</h3>
-           <div class="add">
-              
-Add the image here:<br>
-       <br><input type="file" name="file" id="file">
-       <br><br>
-                   
-       <input type="submit" value="Upload" name="submit">  
-<br><br>
-<input type="button" value="Download text file" name="download">
-<br><br>
- <input type="button" value="Covert to pdf" name="convert">
-   </div>
-           <h3>Text to Speech</h3>     
-             
-<div class="speech">
-
-
-    <br><input type="file" name="file" id="file">
-    <br><br>
-    <input type="submit" value="Upload" name="submit">  
-<br><br>
- 
-     <audio controls>
-         <source src type="audio/mpeg">
-        </audio>
-   </div>
-       </form></center>
+    <div class="col s12 m6 l4">
+      <div class="card hoverable">
+        <div class="card-content white-text">
+          <span class="card-title black-text">Get Wiki Links</span>
+          <p class="black-text">I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+        <div class="card-action">
+          <a class="btn" href="#">Try it out!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- <form><input type="text" value="Message" name="message" id="ttsmessage"><br><br>
+    <input type="button" value="Audio" onclick="mySpeech()"></form> -->
 </body>
 </html>
