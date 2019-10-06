@@ -27,10 +27,24 @@ $query1 = "SELECT * FROM $dbname.convert WHERE userid = " . $_SESSION['userid'];
         else{
             echo "Failed";
         }
-
-        if (isset($_GET['radio-file'])) {
-            $value = $_GET['radio-file'];
-        }
+    if (isset($_GET['radio-file'])) {
+        echo 'here';
+                    $value = $_GET['radio-file'];
+                    echo $value;
+                    $contents = "SELECT ogtext as text_path FROM $dbname.convert as WHERE name = " . $value;
+                    $resultcontents = mysqli_query($conn, $contents);
+                    print_r($resultcontents);
+                    if ($resultcontents) {
+                        echo "Select path done";
+                        $res = mysqli_fetch_assoc($resultcontents);
+                        $speak_text = $res['text_path'];
+                        echo '$file = fopen($speak_text, "r"); fread($file, 1000);';
+                    }
+                    else{
+                        print_r('errpr');
+                    }
+                    echo 'last';
+                }
 
 ?>
 <html>
@@ -74,6 +88,10 @@ $query1 = "SELECT * FROM $dbname.convert WHERE userid = " . $_SESSION['userid'];
         function mySpeechDirect() {
             var speak = document.getElementById("ttsmessage").value;
             responsiveVoice.speak(speak);
+        }
+
+        function mySpeech() {
+            responsiveVoice.speak(<?echo '$file = fopen($speak_text, "r"); fread($file, 1000);'?>);
         }
     </script>
 </head>
@@ -152,10 +170,11 @@ $query1 = "SELECT * FROM $dbname.convert WHERE userid = " . $_SESSION['userid'];
             ?>
 			<?php
             if(isset($_GET['radio-file'])) 
-            echo'<input type="submit" class="btn">Speak</input>';
+            echo'<input type="button" value="Speak" onclick="mySpeech()" class="btn"></button>';
              else
-             echo '<input type="button" value="Speak" onclick="mySpeech()" class="btn"></button>';
+             echo '<input type="submit" class="btn"></input>';
             ?>
+            
             <!-- <input type="submit" class="btn"></input> -->
             </form></div>
             <div class="card-content white-text">
