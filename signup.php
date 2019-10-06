@@ -73,7 +73,7 @@ if (isset($_SESSION['userid'])) {
   // }
 </script>
 
-<body style=" background-size: 100%; background-position: center;">
+<body style=" background-size: 100%; background-position: center; margin-top: 15%;">
   <div class="container">
     <div class="col s12 m12">
       <div class="card main-card">
