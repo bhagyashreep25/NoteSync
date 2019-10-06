@@ -8,23 +8,23 @@ if (!isset($_SESSION['userid'])) {
 $query1 = "SELECT * FROM $dbname.convert WHERE userid = " . $_SESSION['userid'];
 $result = mysqli_query($conn, $query1);
 if ($result) {
-    print_r($result);
-    echo "Select entry done";
+    // print_r($result);
+    // echo "Select entry done";
     $row = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    print_r($row);
+    // print_r($row);
 } else {
-    echo "Failed";
+    // echo "Failed";
 }
 $countq = "SELECT count(name) as total FROM $dbname.convert WHERE userid = " . $_SESSION['userid'];
 $resultcount = mysqli_query($conn, $countq);
 if ($resultcount) {
-    echo "Select count done";
+    // echo "Select count done";
     $countresult = mysqli_fetch_assoc($resultcount);
     $count = $countresult['total'];
-    print_r($count);
+    // print_r($count);
     $rowcount = $count / 3;
 } else {
-    echo "Failed";
+    // echo "Failed";
 }
 
 ?>

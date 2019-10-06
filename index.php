@@ -17,14 +17,27 @@
     }
     .nav-wrapper{
         background-image: linear-gradient(to bottom right,#23416b,#b04276);
-        padding: 0px, 10px;
+        padding: 0px, 20px;
+
     }
     .card{
         margin: 20px;
+        margin-top:20%;
+    
     }
     .btn{
         background-image: linear-gradient(to bottom right,#23416b,#b04276);
     }
+       h1{
+           font-family:georgia;
+           text-align:center;
+           
+       }
+       h2{
+           font-size: 30px;
+           text-align: center;
+       }
+       
  </style>
 </head>
 
@@ -34,7 +47,7 @@
 
 <nav>
     <div class="nav-wrapper">
-        <a href="#" class="brand-logo">NoteSync</a>
+        
         <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="./index.php">Home</a></li>
         <li><a href="./userdocs.php">Your Docs</a></li>
@@ -43,6 +56,9 @@
     </div>
 </nav>
 
+    <h1>
+    NoteSync</h1>
+    <h2>Convert your notes from analog to digital!</h2>
 <div class="row">
     <div class="col s12 m6 l4">
       <div class="card hoverable">
