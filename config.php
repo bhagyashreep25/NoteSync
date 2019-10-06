@@ -7,7 +7,7 @@
     try{
         $conn = mysqli_connect($host,$username,$password,$dbname,$port);
         if(!mysqli_connect_errno()){
-            echo "Connected!";
+            // echo "Connected!";
             
         }
 
