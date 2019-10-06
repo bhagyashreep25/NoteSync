@@ -48,11 +48,10 @@
       <div class="card hoverable">
         <div class="card-content white-text">
           <span class="card-title black-text">OCR</span>
-          <p class="black-text">I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
+          <p class="black-text">Convert your notes,images to text here!</p>
         </div>
         <div class="card-action">
-          <a class="btn" href="ocr.php">Try it out!</a>
+          <a class="btn" href="ocr.php">Convert</a>
         </div>
       </div>
     </div>
@@ -61,11 +60,10 @@
       <div class="card hoverable">
         <div class="card-content white-text">
           <span class="card-title black-text">Notes Aloud</span>
-          <p class="black-text">I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
+          <p class="black-text">Convert your text to sppech!</p>
         </div>
         <div class="card-action">
-            <a class="btn" href="tts.php">Try it out!</a>
+            <a class="btn" href="tts.php">Convert</a>
         </div>
       </div>
     </div>
@@ -74,11 +72,10 @@
       <div class="card hoverable">
         <div class="card-content white-text">
           <span class="card-title black-text">Get Wiki Links</span>
-          <p class="black-text">I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
+          <p class="black-text">Get your previous docs here!</p>
         </div>
         <div class="card-action">
-          <a class="btn" href="natlang.php">Try it out!</a>
+          <a class="btn" href="natlang.php">Go</a>
         </div>
       </div>
     </div>
