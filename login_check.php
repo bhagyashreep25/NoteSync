@@ -22,14 +22,6 @@ if (isset($_POST['log_email'])) {
     } catch (Exception $e) {
         echo "Failed";
     }
-    // echo "$db_pwd";
-    // echo "$email $pwd";
-    // if ($pwd == $db_pwd) {
-        // echo "WOOOOOOOOOOO";
-        // session_start();
-        // $_SESSION['loggedIn'] = true;
-        // $_SESSION['userid'] = $member_id;
-        // $_SESSION['username'] = $email;
     if(password_verify($pwd,$db_pwd)){
         header("Location:./index.php");
     } else {

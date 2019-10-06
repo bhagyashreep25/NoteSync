@@ -34,9 +34,9 @@ if (isset($_FILES['image'])) {
         $query1 = "INSERT INTO $dbname.convert(userid, name, piclink) values ($userid, '$file_name', '$upload_link')";
         $result = mysqli_query($conn, $query1);
         if ($result) {
-            echo "Database entry done";
+            // echo "Database entry done";
         } else {
-            echo "duplicate entry";
+            // echo "duplicate entry";
         }
     } else {
         echo "Failure :(";
@@ -52,7 +52,7 @@ if (isset($_FILES['image'])) {
     );
 
     $image_file = "./uploads/" . $file_name;
-    print_r($image_file);
+    // print_r($image_file);
     // $image_file = 'C:/Users/Netra/Downloads/notes1.jpeg';
     // $image_file = 'D:/BHAGYASHREE/HACK/netra.jpeg'; // \SplFileObject | Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.
     $language = "ENG"; // string | Optional, language of the input document, default is English (ENG).  Possible values are ENG (English), ARA (Arabic), ZHO (Chinese - Simplified), ZHO-HANT (Chinese - Traditional), ASM (Assamese), AFR (Afrikaans), AMH (Amharic), AZE (Azerbaijani), AZE-CYRL (Azerbaijani - Cyrillic), BEL (Belarusian), BEN (Bengali), BOD (Tibetan), BOS (Bosnian), BUL (Bulgarian), CAT (Catalan; Valencian), CEB (Cebuano), CES (Czech), CHR (Cherokee), CYM (Welsh), DAN (Danish), DEU (German), DZO (Dzongkha), ELL (Greek), ENM (Archaic/Middle English), EPO (Esperanto), EST (Estonian), EUS (Basque), FAS (Persian), FIN (Finnish), FRA (French), FRK (Frankish), FRM (Middle-French), GLE (Irish), GLG (Galician), GRC (Ancient Greek), HAT (Hatian), HEB (Hebrew), HIN (Hindi), HRV (Croatian), HUN (Hungarian), IKU (Inuktitut), IND (Indonesian), ISL (Icelandic), ITA (Italian), ITA-OLD (Old - Italian), JAV (Javanese), JPN (Japanese), KAN (Kannada), KAT (Georgian), KAT-OLD (Old-Georgian), KAZ (Kazakh), KHM (Central Khmer), KIR (Kirghiz), KOR (Korean), KUR (Kurdish), LAO (Lao), LAT (Latin), LAV (Latvian), LIT (Lithuanian), MAL (Malayalam), MAR (Marathi), MKD (Macedonian), MLT (Maltese), MSA (Malay), MYA (Burmese), NEP (Nepali), NLD (Dutch), NOR (Norwegian), ORI (Oriya), PAN (Panjabi), POL (Polish), POR (Portuguese), PUS (Pushto), RON (Romanian), RUS (Russian), SAN (Sanskrit), SIN (Sinhala), SLK (Slovak), SLV (Slovenian), SPA (Spanish), SPA-OLD (Old Spanish), SQI (Albanian), SRP (Serbian), SRP-LAT (Latin Serbian), SWA (Swahili), SWE (Swedish), SYR (Syriac), TAM (Tamil), TEL (Telugu), TGK (Tajik), TGL (Tagalog), THA (Thai), TIR (Tigrinya), TUR (Turkish), UIG (Uighur), UKR (Ukrainian), URD (Urdu), UZB (Uzbek), UZB-CYR (Cyrillic Uzbek), VIE (Vietnamese), YID (Yiddish)
@@ -82,13 +82,13 @@ if (isset($_FILES['image'])) {
     print_r($result_file_path);
     $userid = $_SESSION['userid'];
     // $resultpath
-        $query2 = "UPDATE $dbname.convert set ogtext='".$resultpath.$file_name.".txt' WHERE name='$file_name'";
-        $result = mysqli_query($conn, $query2);
-        if ($result) {
-            echo "Database entry done 2";
-        } else {
-            echo "duplicate entry 2";
-        }
+    $query2 = "UPDATE $dbname.convert set ogtext='" . $resultpath . $file_name . ".txt' WHERE name='$file_name'";
+    $result = mysqli_query($conn, $query2);
+    if ($result) {
+        // echo "Database entry done 2";
+    } else {
+        // echo "duplicate entry 2";
+    }
     // $phpWord = new \PhpOffice\PhpWord\PhpWord();
     // $section = $phpWord->addSection();
     // $section->addText(implode($final_result));
@@ -174,35 +174,21 @@ if (isset($_FILES['image'])) {
                             <div class="row">
                                 <div class="input-field col s12">
                                     <?php
-                                    $display_file = fopen("./results/".$file_name.".txt","r");
+                                    $display_file = fopen("./results/" . $file_name . ".txt", "r");
                                     ?>
-                                    <textarea disabled id="textarea-ocr" class="materialize-textarea"><?php echo fread($display_file,1000);?></textarea>
+                                    <textarea disabled id="textarea-ocr" class="materialize-textarea"><?php echo fread($display_file, 1000); ?></textarea>
                                     <label for="textarea1"></label>
                                 </div>
                             </div>
                         </form>
                     </div>
-                    <!-- <p class="center">Upload your image here</p> -->
-                    <!-- <form action="./cloud.php" method="POST" enctype="multipart/form-data"> -->
-                    <!-- <div class = "file-field input-field">
-                  <div class = "btn">
-                     <span>Browse</span>
-                     <input required type = "file" name="image" accept="image/png,image/jpeg,image/jpg" id="image"/>
-                  </div>
-                  
-                  <div class = "file-path-wrapper">
-                     <input class = "file-path validate" type = "text"
-                        placeholder = "Upload file"/>
-                  </div>
-               </div> -->
-                    <!-- </div> -->
-                    <!-- <a class="btn" onclick="save()">Save</a> -->
-                </form>
-                <a class="btn" href="./downloadtext.php?file=<?php  echo $result_file_path;    ?>">Download as text</a>
-                <a class="btn" href="./ocr.php">Try for another file</a>
-                <a class="btn" href="./tts.php">Convert to speech</a>
-                <a class="btn" href="./natlang.php">Get Wiki links</a>
-                
+
+                    </form>
+                    <a class="btn" href="./downloadtext.php?file=<?php echo $result_file_path;    ?>">Download as text</a>
+                    <a class="btn" href="./ocr.php">Try for another file</a>
+                    <a class="btn" href="./tts.php">Convert to speech</a>
+                    <a class="btn" href="./natlang.php">Get Wiki links</a>
+
                 </div>
             </div>
         </div>
