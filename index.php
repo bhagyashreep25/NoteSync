@@ -28,12 +28,6 @@
  </style>
 </head>
 
-<script>
-    function mySpeech() {
-        var speak = document.getElementById("ttsmessage").value;
-        responsiveVoice.speak(speak);
-    }
-</script>
 
 
 <body>
