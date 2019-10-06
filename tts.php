@@ -7,43 +7,46 @@ require_once("./config.php");
 $query1 = "SELECT * FROM $dbname.convert WHERE userid = " . $_SESSION['userid'];
         $result = mysqli_query($conn, $query1);
         if ($result) {
-            print_r($result);
-            echo "Select entry done";
+            // print_r($result);
+            // echo "Select entry done";
             $row = mysqli_fetch_all($result, MYSQLI_ASSOC);
-            print_r($row);
+            // print_r($row);
         }
         else{
-            echo "Failed";
+            // echo "Failed";
         }
         $countq = "SELECT count(name) as total FROM $dbname.convert WHERE userid = " . $_SESSION['userid'];
         $resultcount = mysqli_query($conn, $countq);
         if ($resultcount) {
-            echo "Select count done";
+            // echo "Select count done";
             $countresult = mysqli_fetch_assoc($resultcount);
             $count = $countresult['total'];
-            print_r($count);
+            // print_r($count);
             $rowcount = $count / 3;
         }
         else{
-            echo "Failed";
+            // echo "Failed";
         }
     if (isset($_GET['radio-file'])) {
-        echo 'here';
+        // echo 'here';
                     $value = $_GET['radio-file'];
-                    echo $value;
-                    $contents = "SELECT ogtext as text_path FROM $dbname.convert as WHERE name = " . $value;
+                    // echo $value;
+                    $contents = "SELECT ogtext as text_path FROM $dbname.convert WHERE name = '" . $value . "'";
                     $resultcontents = mysqli_query($conn, $contents);
-                    print_r($resultcontents);
+                    // print_r($resultcontents);
                     if ($resultcontents) {
-                        echo "Select path done";
+                        // echo "Select path done";
                         $res = mysqli_fetch_assoc($resultcontents);
                         $speak_text = $res['text_path'];
-                        echo '$file = fopen($speak_text, "r"); fread($file, 1000);';
+                        // print_r($speak_text);
+                        $file = fopen($speak_text, "r");
+                        $final=fread($file, 1000);
+                        fclose($file);
                     }
                     else{
-                        print_r('errpr');
+                        // print_r('errpr');
                     }
-                    echo 'last';
+                    // echo 'last';
                 }
 
 ?>
@@ -99,7 +102,13 @@ $query1 = "SELECT * FROM $dbname.convert WHERE userid = " . $_SESSION['userid'];
         }
 
         function mySpeech() {
-            responsiveVoice.speak(<?echo '$file = fopen($speak_text, "r"); fread($file, 1000);'?>);
+            <?php $file=fopen($speak_text, "r");
+        $final=fread($file, 1000);
+            ?>
+            responsiveVoice.speak(<?php echo $final;?>);
+            <?php
+            fclose($file);
+            ?>
         }
     </script>
 </head>
@@ -177,12 +186,15 @@ $query1 = "SELECT * FROM $dbname.convert WHERE userid = " . $_SESSION['userid'];
                                 <!-- <label for="textarea1">Textarea</label> -->
                             </div>
                     </div>
+                    </div>
                     <div class="card-action center">
                         <input type="button" value="Speak" onclick="mySpeechDirect()" class="btn"></button></form>
 
                     </div>
                 </div>
-            </div>
+            
+        </div>
+    </div>
 </body>
 
 </html>
