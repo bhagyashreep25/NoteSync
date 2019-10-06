@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['userid'])){
+if (!isset($_SESSION['userid'])) {
     header("Location:./signup.php");
 }
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -35,8 +35,7 @@ if (isset($_FILES['image'])) {
         $result = mysqli_query($conn, $query1);
         if ($result) {
             echo "Database entry done";
-        }
-        else{
+        } else {
             echo "duplicate entry";
         }
     } else {
@@ -76,10 +75,20 @@ if (isset($_FILES['image'])) {
 
     //     echo "<br>";
     // }
-    $result_file = fopen("./results/" . $file_name . ".txt", "w");
+    $result_file_path = "./results/" . $file_name . ".txt";
+    $result_file = fopen($result_file_path, "w");
     fwrite($result_file, implode($final_result));
     fclose($result_file);
-    print_r("./results/".$file_name.".txt");
+    print_r($result_file_path);
+    $userid = $_SESSION['userid'];
+    // $resultpath
+        $query2 = "UPDATE $dbname.convert set ogtext='".$resultpath.$file_name.".txt' WHERE name='$file_name'";
+        $result = mysqli_query($conn, $query2);
+        if ($result) {
+            echo "Database entry done 2";
+        } else {
+            echo "duplicate entry 2";
+        }
     // $phpWord = new \PhpOffice\PhpWord\PhpWord();
     // $section = $phpWord->addSection();
     // $section->addText(implode($final_result));
@@ -87,4 +96,117 @@ if (isset($_FILES['image'])) {
     // $objWriter->save('resultword.docx');
 
 }
+
+// if(isset($_POST['saveto'])){
+
+// }
 ?>
+
+<html>
+
+<head>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap" rel="stylesheet">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=KrEQqVp2"></script>
+
+    <style>
+        body {
+            font-family: 'Be Vietnam';
+        }
+
+        .nav-wrapper {
+            background-image: linear-gradient(to bottom right, #23416b, #b04276);
+            padding: 0px, 10px;
+        }
+
+        .card {
+            margin: 20px;
+            align: center;
+        }
+
+        .btn {
+            background-image: linear-gradient(to bottom right, #23416b, #b04276);
+        }
+
+        h4 {
+            color: black;
+            padding: 15px;
+        }
+
+        p {
+            color: black;
+            padding: 10px;
+        }
+
+        .input-field input[type="file"]:focus {
+            border-bottom: 1px linear-gradient(to bottom right, #23416b, #b04276);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">NoteSync</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="./index.php">Home</a></li>
+                <li><a href="./userdocs.php">Your Docs</a></li>
+                <li><a style="float:right" href="#">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="row">
+        <div class="col s6 offset-s3">
+            <div class="card hoverable">
+                <div class="card-content white-text">
+                    <span class="card-title"></span>
+                    <h4 class="center">Getting Started With OCR</h4>
+                    <h3>Your notes to text:</h3>
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <?php
+                                    $display_file = fopen("./results/".$file_name.".txt","r");
+                                    ?>
+                                    <textarea disabled id="textarea-ocr" class="materialize-textarea"><?php echo fread($display_file,1000);?></textarea>
+                                    <label for="textarea1"></label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- <p class="center">Upload your image here</p> -->
+                    <!-- <form action="./cloud.php" method="POST" enctype="multipart/form-data"> -->
+                    <!-- <div class = "file-field input-field">
+                  <div class = "btn">
+                     <span>Browse</span>
+                     <input required type = "file" name="image" accept="image/png,image/jpeg,image/jpg" id="image"/>
+                  </div>
+                  
+                  <div class = "file-path-wrapper">
+                     <input class = "file-path validate" type = "text"
+                        placeholder = "Upload file"/>
+                  </div>
+               </div> -->
+                    <!-- </div> -->
+                    <!-- <a class="btn" onclick="save()">Save</a> -->
+                </form>
+                <a class="btn" href="./downloadtext.php?file=<?php  echo $result_file_path;    ?>">Download as text</a>
+                <a class="btn" href="./ocr.php">Try for another file</a>
+                <a class="btn" href="./tts.php">Convert to speech</a>
+                <a class="btn" href="./natlang.php">Get Wiki links</a>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

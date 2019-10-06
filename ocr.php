@@ -61,7 +61,7 @@ if(!isset($_SESSION['userid'])){
          <div class = "col s6 offset-s3">
             <div class = "card hoverable">
 			<div class="card-content white-text">
-               <span class="card-title">Materialize File Input</span>
+               <span class="card-title"></span>
 			   <h4 class="center">Getting Started With OCR</h4>
 			   <p class="center">Upload your image here</p>
 			   <form action="./cloud.php" method="POST" enctype="multipart/form-data">

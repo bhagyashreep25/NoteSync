@@ -65,7 +65,7 @@
           I am convenient because I require little markup to use effectively.</p>
         </div>
         <div class="card-action">
-            <a class="btn" href="#">Try it out!</a>
+            <a class="btn" href="tts.php">Try it out!</a>
         </div>
       </div>
     </div>
@@ -78,7 +78,7 @@
           I am convenient because I require little markup to use effectively.</p>
         </div>
         <div class="card-action">
-          <a class="btn" href="#">Try it out!</a>
+          <a class="btn" href="natlang.php">Try it out!</a>
         </div>
       </div>
     </div>
