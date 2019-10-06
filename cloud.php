@@ -79,6 +79,7 @@ if (isset($_FILES['image'])) {
     $result_file = fopen("./results/" . $file_name . ".txt", "w");
     fwrite($result_file, implode($final_result));
     fclose($result_file);
+    print_r("./results/".$file_name.".txt");
     // $phpWord = new \PhpOffice\PhpWord\PhpWord();
     // $section = $phpWord->addSection();
     // $section->addText(implode($final_result));
