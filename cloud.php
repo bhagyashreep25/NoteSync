@@ -75,10 +75,11 @@ if (isset($_FILES['image'])) {
 
     //     echo "<br>";
     // }
-    $result_file = fopen("./results/" . $file_name . ".txt", "w");
+    $result_file_path = "./results/" . $file_name . ".txt";
+    $result_file = fopen($result_file_path, "w");
     fwrite($result_file, implode($final_result));
     fclose($result_file);
-    print_r("./results/" . $file_name . ".txt");
+    print_r($result_file_path);
     $userid = $_SESSION['userid'];
     // $resultpath
         $query2 = "UPDATE $dbname.convert set ogtext='".$resultpath.$file_name.".txt' WHERE name='$file_name'";
@@ -167,6 +168,7 @@ if (isset($_FILES['image'])) {
                 <div class="card-content white-text">
                     <span class="card-title"></span>
                     <h4 class="center">Getting Started With OCR</h4>
+                    <h3>Your notes to text:</h3>
                     <div class="row">
                         <form class="col s12">
                             <div class="row">
@@ -196,9 +198,11 @@ if (isset($_FILES['image'])) {
                     <!-- </div> -->
                     <!-- <a class="btn" onclick="save()">Save</a> -->
                 </form>
+                <a class="btn" href="./downloadtext.php?file=<?php  echo $result_file_path;    ?>">Download as text</a>
                 <a class="btn" href="./ocr.php">Try for another file</a>
                 <a class="btn" href="./tts.php">Convert to speech</a>
                 <a class="btn" href="./natlang.php">Get Wiki links</a>
+                
                 </div>
             </div>
         </div>
