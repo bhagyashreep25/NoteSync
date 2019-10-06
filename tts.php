@@ -1,6 +1,6 @@
 <?phP
 session_start();
-if(!isset($_SESSION['userid'])){
+if (!isset($_SESSION['userid'])) {
     header("Location:./signup.php");
 }
 require_once("./config.php");
@@ -48,6 +48,7 @@ $query1 = "SELECT * FROM $dbname.convert WHERE userid = " . $_SESSION['userid'];
 
 ?>
 <html>
+
 <head>
 
     <!-- Compiled and minified CSS -->
@@ -59,30 +60,37 @@ $query1 = "SELECT * FROM $dbname.convert WHERE userid = " . $_SESSION['userid'];
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://code.responsivevoice.org/responsivevoice.js?key=KrEQqVp2"></script>
 
-   <style>
-    body{
-        font-family: 'Be Vietnam';
-    }
-    .nav-wrapper{
-        background-image: linear-gradient(to bottom right,#23416b,#b04276);
-        padding: 0px, 10px;
-    }
-    .card{
-        margin: 20px;
-		align: center;
-    }
-    .btn{
-        background-image: linear-gradient(to bottom right,#23416b,#b04276);
-    }
-	h4, h5, h6{
-		color: black;
-		padding: 15px;
-	}
-	p{
-		color: black;
-		padding:10px;
-	}
- </style>
+    <style>
+        body {
+            font-family: 'Be Vietnam';
+        }
+
+        .nav-wrapper {
+            background-image: linear-gradient(to bottom right, #23416b, #b04276);
+            padding: 0px, 10px;
+        }
+
+        .card {
+            margin: 20px;
+            align: center;
+        }
+
+        .btn {
+            background-image: linear-gradient(to bottom right, #23416b, #b04276);
+        }
+
+        h4,
+        h5,
+        h6 {
+            color: black;
+            padding: 15px;
+        }
+
+        p {
+            color: black;
+            padding: 10px;
+        }
+    </style>
 
     <script>
         function mySpeechDirect() {
@@ -97,69 +105,49 @@ $query1 = "SELECT * FROM $dbname.convert WHERE userid = " . $_SESSION['userid'];
 </head>
 
 <body>
-<nav>
-    <div class="nav-wrapper">
-        <a href="#" class="brand-logo">NoteSync</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="./index.php">Home</a></li>
-        <li><a href="./userdocs.php">Your Docs</a></li>
-        <li><a style="float:right" href=<?php if(isset($_SESSION['userid'])) echo "./logout.php"; else echo "./signup.php";?>><?php if(isset($_SESSION['userid'])) echo "Logout"; else echo "Login";?></a></li>
-      </ul>
-    </div>
-</nav>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">NoteSync</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="./index.php">Home</a></li>
+                <li><a href="./userdocs.php">Your Docs</a></li>
+                <li><a style="float:right" href=<?php if (isset($_SESSION['userid'])) echo "./logout.php";
+                                                else echo "./signup.php"; ?>><?php if (isset($_SESSION['userid'])) echo "Logout";
+                                                                                else echo "Login"; ?></a></li>
+            </ul>
+        </div>
+    </nav>
 
-	<div class = "row">
-        <div class = "col s6 offset-s3">
-            <div class = "card hoverable">
-			<div class="card-content white-text">
-			   <h4 class="center">Getting Started With Text-to-Speech</h4>
-			   <p class="center">Choose from your docs</p>
-                <form action="" method="GET" id="choose-file">
-                <div class="row">
-                    <div class="col s12 m6 l4">
-                        <ul class="collection">
-                        <?php
-                            // $row = mysqli_fetch_assoc($result);
-                            // $entry=array();
-                            // $i = 1;
-                            if(is_iterable($row)){
-                            foreach($row as $entry){
-                                echo'<li class="collection-item"><p>
+    <div class="row">
+        <div class="col s6 offset-s3">
+            <div class="card hoverable">
+                <div class="card-content white-text">
+                    <h4 class="center">Getting Started With Text-to-Speech</h4>
+                    <p class="center">Choose from your docs</p>
+                    <form action="" method="GET" id="choose-file">
+                        <div class="row">
+                            <div class="col s12 m6 l12">
+                                <ul class="collection">
+                                    <?php
+                                    // $row = mysqli_fetch_assoc($result);
+                                    // $entry=array();
+                                    // $i = 1;
+                                    if (is_iterable($row)) {
+                                        foreach ($row as $entry) {
+                                            echo '<li class="collection-item"><p>
                                 <label>
-                                <input class="with-gap" name="radio-file" value='.$entry["name"].' type="radio" />
-                                <span>'.$entry['name'].'</span>
+                                <input class="with-gap" name="radio-file" value=' . $entry["name"] . ' type="radio" />
+                                <span>' . $entry['name'] . '</span>
                                 </label></p>
                             </li>';
-                            // $i++;
-                            } 
-                            }
-                        ?>
-                            <!-- <li class="collection-item"><p>
-                                <label>
-                                <input class="with-gap" name="group3" type="radio" checked />
-                                <span>Notes1</span>
-                                </label></p>
-                            </li>
-                            <li class="collection-item"><p>
-                                <label>
-                                <input class="with-gap" name="group3" type="radio" checked />
-                                <span>Notes1</span>
-                                </label></p>
-                            </li>
-                            <li class="collection-item"><p>
-                                <label>
-                                <input class="with-gap" name="group3" type="radio" checked />
-                                <span>Notes1</span>
-                                </label></p>
-                            </li>
-                            <li class="collection-item"><p>
-                                <label>
-                                <input class="with-gap" name="group3" type="radio" checked />
-                                <span>Notes1</span>
-                                </label></p>
-                            </li> -->
-                        </ul>
-                    </div>
+                                            // $i++;
+                                        }
+                                    }
+                                    ?>
+
+                                </ul>
+                            </div>
+                        </div>
                 </div>
             </div>
 			<div class="card-action center">
@@ -183,15 +171,18 @@ $query1 = "SELECT * FROM $dbname.convert WHERE userid = " . $_SESSION['userid'];
                 <div class="row">
                     <form class="col s12">
                     <div class="row">
-                    <input type="text" name="message" id="ttsmessage"><br><br>
-                    <!-- <label for="textarea1">Textarea</label> -->
+                        <form class="col s12">
+                            <div class="row">
+                                <input type="text" name="message" id="ttsmessage"><br><br>
+                                <!-- <label for="textarea1">Textarea</label> -->
+                            </div>
+                    </div>
+                    <div class="card-action center">
+                        <input type="button" value="Speak" onclick="mySpeechDirect()" class="btn"></button></form>
+
+                    </div>
                 </div>
             </div>
-            <div class="card-action center">
-			<input type="button" value="Speak" onclick="mySpeechDirect()" class="btn"></button></form>
-
-        </div>
-		</div>
-		</div>
 </body>
+
 </html>
