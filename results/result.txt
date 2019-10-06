@@ -1,90 +1,26 @@
-116
-Drive Belt
-Belt Construction Older belts were made from
-The drive belt turns the pulley on the AC genera-
-neoprene material Neoprene belts crack and lose
-tor (alternator) and may connect to other accesso-
-rib pieces when worn Neoprene belts commonly
-ries such as the water pump and air conditioning
-had a life of about 50,000 miles Serpentine belts
-(A/C) compressor Belts come in three types:
-today are made from EPDM (Ethylene Propylene
-serpentine (V-ribbed), stretch, and V-belt This
-Diene Monomer) rubber EPDM wears similar to
-section focuses on:
-a tire, losing rubber, but not necessarily cracking
-Engine Drive
-V-Belt
-An EPDM belt that isn't cracked or visibly
-Belt Routing
-Belt Wear
-damaged, could still be worn out and need replace
-Serpentine Belt
-Buying Belts
-ing EPDM belts commonly last about 90,000
-Stretch Belt
-miles
-Automatic Belt Tensioner The automatic belt
-Engine Drive Belt Routing
-tensioner (Figure 949), a critical component in
-An engine drive belt routing diagram (Figure
-the belt drive system, keeps a serpentine belt tight
-947) is commonly located on an engine compart-
-with the correct amount of tension and minimizes
-ment label or in the owner's manual
-vibrations Tensioners wear over time and must
-AC
-Generator
-Serpentine
-be replaced If the tensioner spring is worn the
-Belt
-belt can slip creating excessive heat - glazing the
-(Alternator
-belt's surface Glazing leads to belt squealing
-Water
-A worn tensioner spring will exhibit excessive
-Belt
-Pump
-vibrations If the bearing on the tensioner is
-Air
-Conditioning
-Tensioner
-worn, the belt may get out of alignment causing
-Compressor
-side wear and fraying Worn bearings can also
-Crankshaft
-Vacuum
-put stress on the AC generator (alternator), water
-Pump
-pump, air conditioning compressor, or other
-Stretch
-Stretch
-accessories - resulting in premature compo-
-Belt
-Belt
-Figure 947
-Engine Drive Belt Routing
-nent failure It is generally recommended to
-replace the belt tensioner when an EPDM belt is
-Serpentine Belt
-replaced
-A serpentine belt (Figure 948), also called a
-multi-ribbed or multi V-ribbed belt, is usually flat
-on one side and has grooves that run parallel with
-the belt on the other side Commonly, serpentine
-belts will have 2 to 8 grooves on one side and
-are usually 1/2 to 1 inch (127 to 254 cm) wide
-depending on the number of grooves and applica-
-Belt Tensioner
-tion Some have ribs on both sides
-Figure 949
-Web Links
-Belt Related Sites
-Dayco Products
-wwwdaycoproductscom
-Cross-section View
-Gates Corporation
-Figure 948
-Serpentine Belt
-wwwgatescom
-wwwAutoUpkeepcom
+ADBMS : Module 4
+4/10/ 19/ 2 - Phase Protocol :
+Phase 1 Obtaining a decision
+ Co ordinator asks all participants to prepare to commit
+Ti
+ Adds records < prepare T> to log & forces log to
+stable storage
+ Sends prep T mags to all sites at which I executed
+ Transaction manager ( at site ) determines if it can commit
+ if not ,add <no T> record - log , " abort ?" to Ci
+ if can be committed :
+- add record <ready T> to log
+force all records for T to stable storage
+send ready T' mig to Ci
+Phase 2 : Recording the decision
+ I can be committed if C receives ' ready T' msg from all
+ C adds < commit T > or <abort T> accordingly
+ C sends mag to each participant & take local action
+Failure handling : from log
+a ) commit T - no action
+b) abort T - no action
+( ) ready T - consult Ci , redo if commit , undo if abort
+d ) if no record for T ie Si failed before " prepare T" response
+L coordinator aborts T , SK does "undo ? "
+Co-ordinator failure :
+Blocking problem : holds resources
