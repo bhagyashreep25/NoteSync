@@ -51,7 +51,7 @@
           <p class="black-text">Convert your notes,images to text here!</p>
         </div>
         <div class="card-action">
-          <a class="btn" href="ocr.php">Convert</a>
+          <a class="btn" href="ocr.php">Try it out!</a>
         </div>
       </div>
     </div>
@@ -63,7 +63,7 @@
           <p class="black-text">Convert your text to speech!</p>
         </div>
         <div class="card-action">
-            <a class="btn" href="tts.php">Convert</a>
+            <a class="btn" href="tts.php">Try it out!</a>
         </div>
       </div>
     </div>
@@ -75,7 +75,7 @@
           <p class="black-text">Wiki links for all imp notes</p>
         </div>
         <div class="card-action">
-          <a class="btn" href="natlang.php">Go</a>
+          <a class="btn" href="natlang.php">Try it out!</a>
         </div>
       </div>
     </div>
