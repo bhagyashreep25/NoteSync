@@ -1,6 +1,7 @@
 {
 	"require": {
 		"monolog/monolog": "1.0.*",
-		"cloudmersive/cloudmersive_ocr_api_client": "^1.5"
+		"cloudmersive/cloudmersive_ocr_api_client": "^1.5",
+		"phpoffice/phpword": "v0.17.*"
 	}
 }
