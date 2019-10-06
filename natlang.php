@@ -5,37 +5,58 @@ session_start();
 // }
 require_once('TextRazor.php');
 require_once('./config.php');
-
+// require_once("./config.php");
+$query1 = "SELECT * FROM $dbname.convert WHERE userid = " . $_SESSION['userid'];
+$result = mysqli_query($conn, $query1);
+if ($result) {
+    print_r($result);
+    echo "Select entry done";
+    $row = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    print_r($row);
+} else {
+    echo "Failed";
+}
+$countq = "SELECT count(name) as total FROM $dbname.convert WHERE userid = " . $_SESSION['userid'];
+$resultcount = mysqli_query($conn, $countq);
+if ($resultcount) {
+    echo "Select count done";
+    $countresult = mysqli_fetch_assoc($resultcount);
+    $count = $countresult['total'];
+    print_r($count);
+    $rowcount = $count / 3;
+} else {
+    echo "Failed";
+}
 
 TextRazorSettings::setApiKey('dd46ca2a821c49c162b64998ae2dea77e310f3f68c87450d814dcdad');
 
 
-if (isset($_POST['filename'])) {
-    $file_path = $resultpath . $_POST['filename'];
-    // $file_path = $resultpath . "result";
-    // $text = 'Barclays misled shareholders and the public about one of the biggest investments in the banks history, a BBC Panorama investigation has found.';
-    $text = file_get_contents($file_path . ".txt");
+// if (isset($_POST['filename'])) {
+//     $file_path = $resultpath . $_POST['filename'];
+//     // $file_path = $resultpath . "result";
+//     // $text = 'Barclays misled shareholders and the public about one of the biggest investments in the banks history, a BBC Panorama investigation has found.';
+//     $text = file_get_contents($file_path . ".txt");
 
-    $textrazor = new TextRazor();
+//     $textrazor = new TextRazor();
 
-    $textrazor->addExtractor('entities');
+//     $textrazor->addExtractor('entities');
 
-    $response = $textrazor->analyze($text);
-    if (isset($response['response']['entities'])) {
-        $natlangq = "UPDATE $dbname.convert set natlang=" . $response['response']['entities'] . " WHERE name=$file_path;";
-        $result = mysqli_query($conn, $natlangq);
-        if ($result) {
-            print("Success stored");
-        } else {
-            print("error");
-        }
-        foreach ($response['response']['entities'] as $entity) {
-            print($entity['wikiLink']);
-            print($entity['entityId']);
-            print(PHP_EOL);
-        }
-    }
-}
+//     $response = $textrazor->analyze($text);
+//     if (isset($response['response']['entities'])) {
+//         $natlangq = "UPDATE $dbname.convert set natlang=" . json_encode($response) . " WHERE name=$file_path;";
+//         $result = mysqli_query($conn, $natlangq);
+//         if ($result) {
+//             print("Success stored");
+//         } else {
+//             print("error");
+//         }
+//         foreach ($response['response']['entities'] as $entity) {
+//             print($entity['wikiLink']);
+//             print($entity['entityId']);
+//             print(PHP_EOL);
+//         }
+//     }
+// }
 ?>
 
 <html>
@@ -104,46 +125,78 @@ if (isset($_POST['filename'])) {
         <div class="col s6 offset-s3">
             <div class="card hoverable">
                 <div class="card-content white-text">
-                    <span class="card-title"></span>
-                    <h4 class="center">Getting Started With OCR</h4>
-                    <div class="row">
-                        <form class="col s12">
-                            <div class="row">
-                                <div class="input-field col s12">
+                    <h4 class="center">Getting Started With Wiki links</h4>
+                    <p class="center">Choose from your docs</p>
+                    <form action="" method="POST" id="choose-file">
+                        <div class="row">
+                            <div class="col s12 m6 l12">
+                                <ul class="collection">
                                     <?php
-                                    $display_file = fopen("./results/" . $file_name . ".txt", "r");
-                                    ?>
-                                    <textarea disabled id="textarea-ocr" class="materialize-textarea"><?php echo fread($display_file, 1000); ?></textarea>
-                                    <label for="textarea1"></label>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <!-- <p class="center">Upload your image here</p> -->
-                    <!-- <form action="./cloud.php" method="POST" enctype="multipart/form-data"> -->
-                    <!-- <div class = "file-field input-field">
-                  <div class = "btn">
-                     <span>Browse</span>
-                     <input required type = "file" name="image" accept="image/png,image/jpeg,image/jpg" id="image"/>
-                  </div>
-                  
-                  <div class = "file-path-wrapper">
-                     <input class = "file-path validate" type = "text"
-                        placeholder = "Upload file"/>
-                  </div>
-               </div> -->
-                    <!-- </div> -->
-                    <!-- <a class="btn" onclick="save()">Save</a> -->
-                    </form>
-                    <!-- <a class="btn" href="./textdownload.php">Download as text</a>
-                <a class="btn" href="./ocr.php">Try for another file</a>
-                <a class="btn" href="./tts.php">Convert to speech</a>
-                <a class="btn" href="./natlang.php">Get Wiki links</a> -->
 
+                                    if (is_iterable($row)) {
+                                        foreach ($row as $entry) {
+                                            echo '<li class="collection-item"><p>
+                                                <label>
+                                                <input class="with-gap" name="filename" value=' . $entry["name"] . ' type="radio" />
+                                                <span>' . $entry['name'] . '</span>
+                                                </label></p>
+                                                </li>';
+                                        }
+                                    }
+                                    ?>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- </div> -->
+                        <div class="card-action center">
+                            <input type="submit" class="btn">Submit</input>
+                        </div>
+                    </form>
+                    <?php
+
+                    if (isset($_POST['filename'])) {
+                        $file_path = $resultpath . $_POST['filename'];
+                        // $file_path = $resultpath . "result";
+                        // $text = 'Barclays misled shareholders and the public about one of the biggest investments in the banks history, a BBC Panorama investigation has found.';
+                        $text = file_get_contents($file_path . ".txt");
+
+                        $textrazor = new TextRazor();
+
+                        $textrazor->addExtractor('entities');
+
+                        $response = $textrazor->analyze($text);
+                        if (isset($response['response']['entities'])) {
+                            $natlangq = "UPDATE $dbname.convert set natlang=" . json_encode($response) . " WHERE name=$file_path;";
+                            $result = mysqli_query($conn, $natlangq);
+                            if ($result) {
+                                print("Success stored");
+                            } else {
+                                print("error");
+                            }
+                            echo "<table class='highlighted'>
+                            <thead>
+                            <tr>
+                                <th>Entity</th>
+                                <th>Wiki Link</th>   
+                             </tr>
+                            </thead>
+                            <tbody>";
+                            foreach ($response['response']['entities'] as $entity) {
+                                echo "<tr>
+                                    <td>".$entity['entityId']."</td>
+                                    <td><a href=".$entity['wikiLink']." target='_blank'>".$entity['wikiLink']."</td>
+                                </tr>";
+                              
+                            }
+                            echo "</table>";
+                        }
+                    }
+                    ?>
                 </div>
+
             </div>
         </div>
-    </div>
 </body>
 
 </html>
