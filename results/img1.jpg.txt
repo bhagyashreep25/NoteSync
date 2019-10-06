@@ -1,0 +1,46 @@
+consider a system with 5 processes fo to by
+and three resources of
+type A, B , C Resource
+type A has
+10 instances , B has so instances
+and type c has 7 instances
+Process
+Allocation
+Max
+A
+B C
+A B C
+Po
+O
+0
+7
+5 3
+2 0 0
+3
+2
+12
+3
+0 2
+g
+0
+2
+2
+2
+2
+3
+W
+Available [ 3 3 2 ]
+Need matrix is
+Need [ ;] = Max Ci , ] ] - AllocationLij
+Need :
+BIC
+Pa
+4 3
+1
+2 2
+6
+P 2
+O
+Puly
+3
+Applying safety algorithm to system
