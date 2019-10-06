@@ -5,6 +5,6 @@ if(!isset($_SESSION['userid'])){
     header("Location:./signup.php");
 }
 
-$query = "SELECT piclink,"
+$query = "SELECT user.piclink,"
 
 ?>
