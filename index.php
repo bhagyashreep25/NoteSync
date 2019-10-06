@@ -60,7 +60,7 @@
       <div class="card hoverable">
         <div class="card-content white-text">
           <span class="card-title black-text">Notes Aloud</span>
-          <p class="black-text">Convert your text to sppech!</p>
+          <p class="black-text">Convert your text to speech!</p>
         </div>
         <div class="card-action">
             <a class="btn" href="tts.php">Convert</a>
@@ -72,7 +72,7 @@
       <div class="card hoverable">
         <div class="card-content white-text">
           <span class="card-title black-text">Get Wiki Links</span>
-          <p class="black-text">Get your previous docs here!</p>
+          <p class="black-text">Wiki links for all imp notes</p>
         </div>
         <div class="card-action">
           <a class="btn" href="natlang.php">Go</a>
