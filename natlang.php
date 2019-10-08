@@ -27,7 +27,7 @@ if ($resultcount) {
     // echo "Failed";
 }
 
-TextRazorSettings::setApiKey('dd46ca2a821c49c162b64998ae2dea77e310f3f68c87450d814dcdad');
+TextRazorSettings::setApiKey($textrazor_key);
 
 
 // if (isset($_POST['filename'])) {

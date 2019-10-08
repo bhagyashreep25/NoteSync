@@ -7,7 +7,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 require_once('./config.php');
 
 // Configure API key authorization: Apikey
-$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey("Apikey", '41c65395-0741-456f-9c94-384b6bb897d6');
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey("Apikey", $cloudmersive_key);
 
 if (isset($_FILES['image'])) {
     $file_name = $_FILES['image']['name'];
