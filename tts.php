@@ -61,7 +61,15 @@ $query1 = "SELECT * FROM $dbname.convert WHERE userid = " . $_SESSION['userid'];
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://code.responsivevoice.org/responsivevoice.js?key=KrEQqVp2"></script>
+    <script type="text/javascript" src="./js/config.js"></script>
+    <script>
+    var tts_key = config.tts_key;
+    </script>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=" + tts_key></script>
+    <?php
+    // echo "<script src='https://code.responsivevoice.org/responsivevoice.js?key=' . $tts_key . '></script>";
+    ?>
+    
 
     <style>
         body {
