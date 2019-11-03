@@ -1,8 +1,8 @@
 <?php
 session_start();
-// if(!isset($_SESSION['userid'])){
-//     header("Location:./signup.php");
-// }
+if(!isset($_SESSION['userid'])){
+    header("Location:./signup.php");
+}
 require_once('TextRazor.php');
 require_once('./config.php');
 $query1 = "SELECT * FROM $dbname.convert WHERE userid = " . $_SESSION['userid'];
@@ -29,33 +29,6 @@ if ($resultcount) {
 
 TextRazorSettings::setApiKey($textrazor_key);
 
-
-// if (isset($_POST['filename'])) {
-//     $file_path = $resultpath . $_POST['filename'];
-//     // $file_path = $resultpath . "result";
-//     // $text = 'Barclays misled shareholders and the public about one of the biggest investments in the banks history, a BBC Panorama investigation has found.';
-//     $text = file_get_contents($file_path . ".txt");
-
-//     $textrazor = new TextRazor();
-
-//     $textrazor->addExtractor('entities');
-
-//     $response = $textrazor->analyze($text);
-//     if (isset($response['response']['entities'])) {
-//         $natlangq = "UPDATE $dbname.convert set natlang=" . json_encode($response) . " WHERE name=$file_path;";
-//         $result = mysqli_query($conn, $natlangq);
-//         if ($result) {
-//             print("Success stored");
-//         } else {
-//             print("error");
-//         }
-//         foreach ($response['response']['entities'] as $entity) {
-//             print($entity['wikiLink']);
-//             print($entity['entityId']);
-//             print(PHP_EOL);
-//         }
-//     }
-// }
 ?>
 
 <html>
